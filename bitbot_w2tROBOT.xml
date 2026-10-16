@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bitbot>
+  <logger path="./log"/>
+  
+  <backend port="12888" settings_file="./backend.json"/>
+
+  <mujoco file="./models/w2tROBOT.xml"/>
+  
+  <bus>
+    <device id="1" type="MujocoJoint" name="rhip_roll"
+            mode="position" initial_pos='0'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="2" type="MujocoJoint" name="rfem_pitch"
+            mode="position" initial_pos='30'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="3" type="MujocoJoint" name="rtib_pitch"
+            mode="position" initial_pos='-60'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="4" type="MujocoJoint" name="rATS_pitch"
+            mode="torque" initial_pos='30'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="5" type="MujocoJoint" name="rNUT_slide"
+            mode="position" initial_pos='0'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="6" type="MujocoJoint" name="lhip_roll"
+            mode="position" initial_pos='0'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="7" type="MujocoJoint" name="lfem_pitch"
+            mode="position" initial_pos='30'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="8" type="MujocoJoint" name="ltib_pitch"
+            mode="position" initial_pos='-60'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="9" type="MujocoJoint" name="lATS_pitch"
+            mode="torque" initial_pos='30'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="10" type="MujocoJoint" name="lNUT_slide"
+            mode="position" initial_pos='0'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="11" type="MujocoImu" name="imu"
+            site="site_imu" acc="acc_imu" gyro="gyro_imu"
+    />
+  </bus>
+</bitbot>
